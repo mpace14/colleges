@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?><database>
+    <element extends="sys_import_set_row" label="data 2 datasource" max_length="40" name="x_135350_colleges_data_2_datasource" sizeclass="6702" type="collection">
+        <element attributes="edge_encryption_enabled=true,import_attribute_name=ADM2018.SAT Evidence-Based Reading and Writing 75th percentile score" label="ADM2018.SAT Evidence-Based Reading and Writing 75th percentile score" max_length="40" name="u_adm2018_sat__rcentile_scor0" type="string"/>
+        <element attributes="edge_encryption_enabled=true,import_attribute_name=ADM2018.SAT Math 75th percentile score" label="ADM2018.SAT Math 75th percentile score" max_length="40" name="u_adm2018_sat__rcentile_score" type="string"/>
+        <element attributes="edge_encryption_enabled=true,import_attribute_name=DRVADM2018.Admissions yield - full time" label="DRVADM2018.Admissions yield - full time" max_length="40" name="u_drvadm2018_a_ld___full_time" type="string"/>
+        <element attributes="edge_encryption_enabled=true,import_attribute_name=DRVADM2018.Percent admitted - total" label="DRVADM2018.Percent admitted - total" max_length="40" name="u_drvadm2018_p_mitted___total" type="string"/>
+        <element attributes="edge_encryption_enabled=true,import_attribute_name=DRVGR2018.Graduation rate,total cohort=true" label="DRVGR2018.Graduation rate, total cohort" max_length="40" name="u_drvgr2018_gr___total_cohort" type="string"/>
+        <element attributes="edge_encryption_enabled=true,import_attribute_name=DRVIC2018.Total price for out-of-state students living off campus (not with family)  2018-19" label="DRVIC2018.Total price for out-of-state students living off campus (not with fami" max_length="40" name="u_drvic2018_to_mily___2018_10" type="string"/>
+        <element attributes="edge_encryption_enabled=true,import_attribute_name=DRVIC2018.Total price for in-state students living off campus (not with family)  2018-19" label="DRVIC2018.Total price for in-state students living off campus (not with family) " max_length="40" name="u_drvic2018_to_mily___2018_19" type="string"/>
+        <element attributes="edge_encryption_enabled=true,fall 2018=true,import_attribute_name=EF2018D.Total entering students at the undergraduate level" label="EF2018D.Total entering students at the undergraduate level, fall 2018" max_length="40" name="u_ef2018d_tota_vel__fall_2018" type="string"/>
+        <element attributes="edge_encryption_enabled=true,import_attribute_name=HD2018.FIPS state code" label="HD2018.FIPS state code" max_length="40" name="u_hd2018_fips_state_code" type="string"/>
+        <element attributes="edge_encryption_enabled=true,import_attribute_name=HD2018.Institutional category" label="HD2018.Institutional category" max_length="55" name="u_hd2018_insti_ional_category" type="string"/>
+        <element attributes="edge_encryption_enabled=true,import_attribute_name=HD2018.Institution size category" label="HD2018.Institution size category" max_length="40" name="u_hd2018_insti__size_category" type="string"/>
+        <element attributes="edge_encryption_enabled=true,import_attribute_name=HD2018.State abbreviation" label="HD2018.State abbreviation" max_length="40" name="u_hd2018_state_abbreviation" type="string"/>
+        <element attributes="edge_encryption_enabled=true,import_attribute_name=institution name" label="institution name" max_length="91" name="u_institution_name" type="string"/>
+        <element attributes="edge_encryption_enabled=true,import_attribute_name=unitid" label="unitid" max_length="40" name="u_unitid" type="string"/>
+        <element attributes="edge_encryption_enabled=true,import_attribute_name=year" label="year" max_length="40" name="u_year" type="string"/>
+    </element>
+</database>

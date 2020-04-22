@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?><database>
+    <element label="colleges Table" max_length="40" name="x_135350_colleges_table" sizeclass="6702" type="collection">
+        <element label="Percent Admitted" max_length="40" name="u_adm_pct" type="integer"/>
+        <element label="Admissions Yield Pct" max_length="40" name="u_adm_yield_pct" type="integer"/>
+        <element label="Also known as" max_length="700" name="u_aka" type="string"/>
+        <element label="Category" max_length="40" name="u_category" type="string"/>
+        <element label="Chief Official" max_length="60" name="u_chief" type="string"/>
+        <element label="Chief's Title" max_length="80" name="u_chief_title" type="string"/>
+        <element label="City" max_length="40" name="u_city" type="string"/>
+        <element label="Congress District Code" max_length="6" name="u_congdistcode" type="string"/>
+        <element label="County" max_length="40" name="u_county" type="string"/>
+        <element label="Entering undergrads per year" max_length="40" name="u_entering_undergrads" type="integer"/>
+        <element label="General Phone Number" max_length="40" name="u_genphone" type="phone_number_e164"/>
+        <element label="General Phone" max_length="20" name="u_genphone_string" type="string"/>
+        <element label="Graduation Rate" max_length="40" name="u_gradrate" type="integer"/>
+        <element label="In-state offcampus annual cost" max_length="20" name="u_instate_offcampus_cost" type="currency"/>
+        <element label="n-state offcampus annual cost" max_length="20" name="u_instate_offc_cost" type="currency"/>
+        <element label="Latitude" max_length="20" name="u_latitude" type="decimal"/>
+        <element label="Longitude" max_length="20" name="u_longitude" type="decimal"/>
+        <element label="NAA?" max_length="40" name="u_naa" type="boolean"/>
+        <element label="NAIA?" max_length="40" name="u_naia" type="boolean"/>
+        <element label="Institution Name" max_length="100" name="u_name" type="string"/>
+        <element label="NCAA?" max_length="40" name="u_ncaa" type="boolean"/>
+        <element label="NCCAA?" max_length="40" name="u_nccaa" type="boolean"/>
+        <element label="NJCAA?" max_length="40" name="u_njcaa" type="boolean"/>
+        <element label="NSCAA?" max_length="40" name="u_nscaa" type="boolean"/>
+        <element label="Other Athletic Org?" max_length="40" name="u_otherathleticorg" type="boolean"/>
+        <element label="Out-of-state offcampus annual cost" max_length="20" name="u_outstate_offcampus_cost" type="currency"/>
+        <element label="Out-of-state offcampus annual cost" max_length="20" name="u_outstate_offc_cost" type="currency"/>
+        <element label="Reading/Writing 75 percentile" max_length="40" name="u_rw75pct" type="integer"/>
+        <element label="SAT Math 75 percentile" max_length="40" name="u_satmath_75pct" type="integer"/>
+        <element label="Size category" max_length="40" name="u_sizecategory" type="string"/>
+        <element label="State" max_length="40" name="u_state" type="string"/>
+        <element label="Street Address" max_length="90" name="u_street_addr" type="string"/>
+        <element attributes="format=none" label="IPEDS Unit ID" max_length="40" name="u_unitid" type="integer"/>
+        <element label="IPEDS Unit ID String" max_length="8" name="u_unitid_string" type="string"/>
+        <element label="Web Address" max_length="170" name="u_webaddr" type="string"/>
+        <element label="Web URL" max_length="180" name="u_web_url" type="url"/>
+        <element attributes="format=none" label="Year" max_length="40" name="u_year" type="integer"/>
+        <element label="Zip" max_length="12" name="u_zip" type="string"/>
+    </element>
+</database>

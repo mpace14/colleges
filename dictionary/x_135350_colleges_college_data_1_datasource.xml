@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?><database>
+    <element extends="sys_import_set_row" label="College data 1 datasource" max_length="40" name="x_135350_colleges_college_data_1_datasource" sizeclass="6702" type="collection">
+        <element attributes="edge_encryption_enabled=true,import_attribute_name=HD2018.FIPS state code" label="HD2018.FIPS state code" max_length="40" name="u_hd2018_fips_state_code" type="string"/>
+        <element attributes="edge_encryption_enabled=true,import_attribute_name=institution name" label="institution name" max_length="91" name="u_institution_name" type="string"/>
+        <element attributes="edge_encryption_enabled=true,import_attribute_name=unitid" label="unitid" max_length="40" name="u_unitid" type="string"/>
+        <element attributes="edge_encryption_enabled=true,import_attribute_name=year" label="year" max_length="40" name="u_year" type="string"/>
+    </element>
+</database>

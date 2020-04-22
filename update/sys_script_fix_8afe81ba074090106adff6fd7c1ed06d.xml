@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_script_fix">
+    <sys_script_fix action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <before>false</before>
+        <description>Find phone numbers longer than standard 10 digits</description>
+        <flush_cache>false</flush_cache>
+        <name>find long phonenumbers</name>
+        <record_for_rollback>false</record_for_rollback>
+        <run_once>true</run_once>
+        <script><![CDATA[var gr = new GlideRecord('x_135350_colleges_table');
+
+  //updateGr.setLimit(3) // to make sure it is working as intended before running against all records  
+gr.orderBy('u_unitid'); 
+gr.query();
+var longnumbercount=0;
+while(gr.next())
+
+{
+
+  var unitid = gr.getValue('u_unitid');
+  var pnbr = gr.getValue('u_genphone_string');
+  if (pnbr != null){
+      pnbrlen=pnbr.length;
+      if (pnbrlen>10){
+          gs.debug(unitid + ": " + pnbr); 
+          longnumbercount = longnumbercount + 1;
+      }
+  }
+}
+gs.debug("Longnumbercount:" + longnumbercount);]]></script>
+        <sys_class_name>sys_script_fix</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2020-04-12 01:58:51</sys_created_on>
+        <sys_id>8afe81ba074090106adff6fd7c1ed06d</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>find long phonenumbers</sys_name>
+        <sys_package display_value="colleges" source="x_135350_colleges">5ff2916107c410106adff6fd7c1ed081</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="colleges">5ff2916107c410106adff6fd7c1ed081</sys_scope>
+        <sys_update_name>sys_script_fix_8afe81ba074090106adff6fd7c1ed06d</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2020-04-12 01:58:51</sys_updated_on>
+        <unloadable>false</unloadable>
+    </sys_script_fix>
+</record_update>

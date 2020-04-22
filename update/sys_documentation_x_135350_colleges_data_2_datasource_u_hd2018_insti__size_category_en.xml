@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update>
+    <sys_documentation element="u_hd2018_insti__size_category" label="HD2018.Institution size category" language="en" table="x_135350_colleges_data_2_datasource">
+        <sys_documentation action="INSERT_OR_UPDATE">
+            <element>u_hd2018_insti__size_category</element>
+            <help/>
+            <hint/>
+            <label>HD2018.Institution size category</label>
+            <language>en</language>
+            <name>x_135350_colleges_data_2_datasource</name>
+            <plural>HD2018.Institution size categories</plural>
+            <sys_class_name>sys_documentation</sys_class_name>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2020-04-08 06:26:12</sys_created_on>
+            <sys_id>45066525070810106adff6fd7c1ed07b</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_name>HD2018.Institution size category</sys_name>
+            <sys_package display_value="colleges" source="x_135350_colleges">5ff2916107c410106adff6fd7c1ed081</sys_package>
+            <sys_policy/>
+            <sys_scope display_value="colleges">5ff2916107c410106adff6fd7c1ed081</sys_scope>
+            <sys_update_name>sys_documentation_x_135350_colleges_data_2_datasource_u_hd2018_insti__size_category_en</sys_update_name>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2020-04-08 06:26:12</sys_updated_on>
+            <url/>
+            <url_target/>
+        </sys_documentation>
+    </sys_documentation>
+</record_update>

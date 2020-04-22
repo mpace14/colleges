@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update>
+    <sys_documentation element="u_unitid" label="unitid" language="en" table="x_135350_colleges_college_data_1_datasource">
+        <sys_documentation action="INSERT_OR_UPDATE">
+            <element>u_unitid</element>
+            <help/>
+            <hint/>
+            <label>unitid</label>
+            <language>en</language>
+            <name>x_135350_colleges_college_data_1_datasource</name>
+            <plural>unitids</plural>
+            <sys_class_name>sys_documentation</sys_class_name>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2020-04-08 05:37:01</sys_created_on>
+            <sys_id>a4ca59a907c410106adff6fd7c1ed00d</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_name>unitid</sys_name>
+            <sys_package display_value="colleges" source="x_135350_colleges">5ff2916107c410106adff6fd7c1ed081</sys_package>
+            <sys_policy/>
+            <sys_scope display_value="colleges">5ff2916107c410106adff6fd7c1ed081</sys_scope>
+            <sys_update_name>sys_documentation_x_135350_colleges_college_data_1_datasource_u_unitid_en</sys_update_name>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2020-04-08 05:37:01</sys_updated_on>
+            <url/>
+            <url_target/>
+        </sys_documentation>
+    </sys_documentation>
+</record_update>

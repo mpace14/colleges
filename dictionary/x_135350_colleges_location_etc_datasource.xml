@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?><database>
+    <element extends="sys_import_set_row" label="location etc datasource" max_length="40" name="x_135350_colleges_location_etc_datasource" sizeclass="6857" type="collection">
+        <element attributes="edge_encryption_enabled=true,import_attribute_name=aka" label="aka" max_length="680" name="u_aka" type="string"/>
+        <element attributes="edge_encryption_enabled=true,import_attribute_name=chief" label="chief" max_length="50" name="u_chief" type="string"/>
+        <element attributes="edge_encryption_enabled=true,import_attribute_name=chieftitle" label="chieftitle" max_length="75" name="u_chieftitle" type="string"/>
+        <element attributes="edge_encryption_enabled=true,import_attribute_name=city" label="city" max_length="40" name="u_city" type="string"/>
+        <element attributes="edge_encryption_enabled=true,import_attribute_name=congdistcode" label="congdistcode" max_length="40" name="u_congdistcode" type="string"/>
+        <element attributes="edge_encryption_enabled=true,import_attribute_name=county" label="county" max_length="40" name="u_county" type="string"/>
+        <element attributes="edge_encryption_enabled=true,import_attribute_name=generalphone" label="generalphone" max_length="40" name="u_generalphone" type="string"/>
+        <element attributes="edge_encryption_enabled=true,import_attribute_name=latitude" label="latitude" max_length="40" name="u_latitude" type="string"/>
+        <element attributes="edge_encryption_enabled=true,import_attribute_name=longitude" label="longitude" max_length="40" name="u_longitude" type="string"/>
+        <element attributes="edge_encryption_enabled=true,import_attribute_name=name" label="name" max_length="91" name="u_name" type="string"/>
+        <element attributes="edge_encryption_enabled=true,import_attribute_name=streetaddress" label="streetaddress" max_length="81" name="u_streetaddress" type="string"/>
+        <element attributes="edge_encryption_enabled=true,import_attribute_name=unitid" label="unitid" max_length="40" name="u_unitid" type="string"/>
+        <element attributes="edge_encryption_enabled=true,import_attribute_name=webaddr" label="webaddr" max_length="150" name="u_webaddr" type="string"/>
+        <element attributes="edge_encryption_enabled=true,import_attribute_name=zip" label="zip" max_length="40" name="u_zip" type="string"/>
+    </element>
+</database>

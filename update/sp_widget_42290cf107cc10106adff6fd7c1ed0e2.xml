@@ -1,0 +1,362 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_widget">
+    <sp_widget action="INSERT_OR_UPDATE">
+        <category>custom</category>
+        <client_script><![CDATA[function($scope) {
+  /* widget controller */
+  var c = this;
+	
+  $scope.launchSearch = function() {
+		//c.data.selectedCode="50";//breaks it
+		//data.selectedCode="50";//breaks it
+		//$scope.selectedNumber=196167;//ignores it in favor of UI selectedCode
+		//alert("selection: " + $scope.selectedNumber);  // displays 50
+		//alert("selection: " + $scope.selectedCode);  // displays 50
+		//alert("selection: " + selectedCode);  // breaks it
+		$scope.server.update();
+		//alert("Data: " + data);
+		//alert(JSON.stringify(data.items, null, 4));
+
+		$scope.setFocusToTextBox();
+	}
+	
+	$scope.setFocusToTextBox = function (){
+		/*alert("in setFocusToTextBox");*/
+    var myFocalPoint = document.getElementById("bugzoo");
+	  myFocalPoint.focus();
+    myFocalPoint.scrollIntoView();
+  }
+	
+  $scope.setUrl = function (){
+    return "https://www.youtube.com/embed/0RphpnvSzew";
+  }
+}
+]]></client_script>
+        <controller_as>c</controller_as>
+        <css>.frameH { grid-area: header; }
+.frameHC { grid-area: headerc; }
+.frameT1L { grid-area: topleftl; }
+.frameT1 { grid-area: topleft; }
+.frameT2L { grid-area: topmiddlel; }
+.frameT2 { grid-area: topmiddle; }
+.frameT3L { grid-area: toprightl; }
+.frameT3 { grid-area: topright; }
+.frameB1L { grid-area: bottomleftl; }
+.frameB1 { grid-area: bottomleft; }
+.frameB2L { grid-area: bottomrightl; }
+.frameB2 { grid-area: bottomright; }
+.frameSB1L { grid-area: subbottomleftl; }
+.frameSB1 { grid-area: subbottomleft; }
+.frameSB2L { grid-area: subbottomrightl; }
+.frameSB2 { grid-area: subbottomright; }
+.frameF { grid-area: footer; }
+.frameFR { grid-area: footerright; }
+
+.mygrid-container {
+  display: grid;
+  grid-template-areas:
+    'header header headerc headerc headerc headerc'
+    'topleftl topleft topmiddlel topmiddle toprightl topright'
+    'bottomleftl bottomleft bottomrightl bottomright bottomright bottomright'
+    'subbottomleftl subbottomleft subbottomrightl subbottomright subbottomright subbottomright'
+    'footer footerright footerright footerright footerright footerright';
+  gap: 0px;
+  justify-content: stretch;
+  /*background-color: #77A184;*/
+  background-color: #445584;
+  padding: 10px 50px;
+}
+.mygrid-container &gt; div {
+  background-color: 77A184;
+  text-align: left;
+  padding: 20px 0;
+  font-size: 20px;
+  color: black;
+}
+.multiline
+{
+  padding:20px;
+  white-space: pre-wrap;
+}
+.multiline2
+{
+    background: red;
+    width: 200px;
+    height: 200px;
+    word-break: break-all;
+}
+
+.frameT1L {
+  /*background-color: red;
+  color: blue;*/
+  text-align: right;
+}
+.frameT1 {
+  /*background-color: gold;*/
+  /* color: blue;*/
+  text-align: right;
+}
+.frameB2 {
+  /*background-color: gold;*/
+  /* color: blue;*/
+  text-align: left;
+}
+
+.resizedTextbox {width: 250px; height: 25px; padding: 1px}
+.resizedTextbox2 {width: 500px; height: 100px; padding: 1px}
+.resizedTextbox3 {width: 40px; height: 25px; padding: 1px}
+.resizedTextbox4 {width: 350px; height: 50px; padding: 1px}
+
+.item-a {
+  /*align-self: end;*/
+  background-color: blue;
+  border: 1px solid red; 
+  /*padding: 3px 0 3px 30px;*/
+  padding: 3px 0 0 30px;
+  padding-right: 1px; 
+  text-align: left;
+
+}
+
+.item-b {
+  background-color: #77A184;
+  box-shadow: 5px 10px:
+}
+.confinedSpace textarea { resize:vertical; max-height:100px; min-height:100px; }
+#.confinedSpace textarea { resize:horizontal; max-widt</css>
+        <data_table>sp_instance</data_table>
+        <demo_data/>
+        <description/>
+        <docs/>
+        <field_list/>
+        <has_preview>true</has_preview>
+        <id>main_colleges</id>
+        <internal>false</internal>
+        <link><![CDATA[function link(scope, element, attrs, controller) {  }]]></link>
+        <name>main colleges</name>
+        <option_schema/>
+        <public>false</public>
+        <roles/>
+        <script><![CDATA[(function() {
+  /* populate the 'data' object */
+  /* e.g., data.table = $sp.getValue('table'); */
+	/*gs.addInfoMessage('Selected' + data.whatever);*/
+	if (input){
+		if (input.selectedNumber == 'x'){ // new roman selected
+			    populateFields2(input.selectedName);
+	    }
+    else if (input.selectedNumber != null && input.selectedNumber != ''){
+      //gs.addInfoMessage('New number: ' + input.selectedNumber);
+			populateFields(input.selectedNumber);
+    } else {
+      gs.addInfoMessage('No selectedNumber?');
+    }
+  } else { //initialize
+    //gs.addInfoMessage('No input?');
+		data.ids=initNumberDropdown();
+		data.names=initNameDropdown();
+		data.items=initDisplay();
+		data.selectedName=data.items[0].name;
+		//gs.addInfoMessage("Data: "+data.names.toSource());
+  }
+		
+	function initNumberDropdown() {  
+		var gr = new GlideRecord('x_135350_colleges_table');
+		gr.orderBy("u_unitid");
+		gr.query();
+		//gs.addInfoMessage("Row count: " + gr.getRowCount());		
+		results = [];
+		while (gr.next()) {
+      var entry = {};
+      entry.item = gr.getValue('u_unitid');
+	    /*gs.addInfoMessage('Next number: ' + entry.item);*/
+			results.push(entry.item);
+		}
+    return results;
+	}
+		
+	function initNameDropdown() {  
+		var gr = new GlideRecord('x_135350_colleges_table');
+		gr.orderBy("u_unitid");
+		gr.query();
+		//gs.addInfoMessage("Row count: " + gr.getRowCount());		
+		results = [];
+		while (gr.next()) {
+      var entry = {};
+      entry.item = gr.getValue('u_name');
+	    /*gs.addInfoMessage('Next code: ' + entry.item);*/
+			results.push(entry.item);
+		}
+    return results;
+	}
+		
+	function initDisplay() { 
+		//data.selectedNumber=data.gamenumbers[0];
+		data.selectedNumber=196167;
+		dataitems=populateFields(196167);
+		//gs.addInfoMessage("data.items: " + data.items.toSource());
+		//gs.addInfoMessage("Roman: " + data.items[0].roman);
+		return dataitems;
+	}
+	function populateFields(key) { // supply number, want roman
+		var gr = new GlideRecord('x_135350_colleges_table');
+		var gqc = gr.addQuery('u_unitid',key);
+		gr.query();
+		//gs.addInfoMessage("Row count: " + gr.getRowCount());		
+		data.items = processRecordZ(gr);
+		data.selectedRoman=data.items[0].name;
+		data.selectedNumber=data.items[0].id;
+		//gs.addInfoMessage("data.items: " + data.items.toSource());
+		//gs.addInfoMessage("data.selectedNumber: " + data.selectedNumber.toSource());
+		//gs.addInfoMessage("Supply: " + key + "return: " + data.selectedRoman.toSource());
+		//gs.addInfoMessage("data.selectedRoman: " + data.selectedRoman.toSource());
+		//gs.addInfoMessage("Country: " + data.items[0].country);
+		return data.items;
+	}
+	
+	function populateFields2(key) {  //supply roman, want number
+		var gr = new GlideRecord('x_135350_colleges_table');
+		var gqc = gr.addQuery('u_name',key);
+		gr.query();
+		//gs.addInfoMessage("Key: " + key + "Row count: " + gr.getRowCount());		
+		data.items = processRecordZ(gr);
+		//gs.addInfoMessage("data.items: " + data.items.toSource());
+		data.selectedNumber=data.items[0].id;
+		//gs.addInfoMessage("Supply: " + key + "return: " + data.selectedNumber.toSource());
+		//gs.addInfoMessage("data.selectedRoman: " + data.selectedRoman.toSource());
+		return data.items;
+		//gs.addInfoMessage("Country: " + data.items[0].country);
+	}
+
+
+	function processRecordZ(gr) {
+        var results = [];
+        while (gr.next()) {
+            /*if (!$sp.canReadRecord(gr))
+						continue;*/
+            //To set to read-only
+					  //doSomething
+					/*Normally a script would do a direct assignment, 
+					for example, gr.category = value. However, if in a script 
+					the element name is a variable, then gr.setValue(elementName, value)
+					can be used. When setting a value, ensure the data type of the field 
+					matches the data type of the value you enter...*/
+					  //gr.update();
+					  /*gr.readonly=true;
+					  gr.update();*/
+					//gs.addInfoMessage("Readonly? " + gr.u_region.getAttribute("read_only"));
+            //var item = {};
+            /*item = gr.getValue('u_countrycode');*/
+               /*gs.addInfoMessage(item + ' exists');*/
+            var game = {};
+            game.id = gr.getValue('u_unitid');
+            game.name = gr.getValue('u_name');
+            game.newundergrads = gr.getValue('u_entering_undergrads');
+            game.year = gr.getValue('u_year');
+            game.gradrate = gr.getValue('u_gradrate');
+            game.sizecat = gr.getValue('u_sizecategory');
+            game.state = gr.getValue('u_state');
+            game.admitpct = gr.getValue('u_adm_pct');
+            game.admityield = gr.getValue('u_adm_yield_pct');
+            game.instatecost = gr.getValue('u_instate_offcampus_cost');
+            game.outstatecost = gr.getValue('u_outstate_offcampus_cost');
+            game.satmath75 = gr.getValue('u_satmath_75pct');
+            game.rw75 = gr.getValue('u_rw75pct');
+            game.cat = gr.getValue('u_category');
+            results.push(game);
+        }
+		    gs.addInfoMessage("results: " + results.toSource());
+		    //gs.addInfoMessage("date: " + game.date);
+
+        return results;
+  }
+	
+})();]]></script>
+        <servicenow>false</servicenow>
+        <sys_class_name>sp_widget</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2020-04-08 18:18:59</sys_created_on>
+        <sys_id>42290cf107cc10106adff6fd7c1ed0e2</sys_id>
+        <sys_mod_count>77</sys_mod_count>
+        <sys_name>main colleges</sys_name>
+        <sys_package display_value="colleges" source="x_135350_colleges">5ff2916107c410106adff6fd7c1ed081</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="colleges">5ff2916107c410106adff6fd7c1ed081</sys_scope>
+        <sys_update_name>sp_widget_42290cf107cc10106adff6fd7c1ed0e2</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2020-04-10 07:28:57</sys_updated_on>
+        <template><![CDATA[<div>
+<html>
+<head>
+<style>
+</style>
+</head>
+<body>
+<div class="mygrid-container">
+  <div class="frameHC">
+    <h2>U.S. Colleges</h2>
+  </div>
+  <div class="frameT1L"  >    
+       IPEDS #<br>   
+    Name<br>
+        Year
+  </div>
+  <div class="frameT1">
+    <form>
+      <select ng-model="data.selectedNumber" ng-change="launchSearch();" ng-options="x for x in data.ids">
+      </select>
+          <!--<br><input class="resizedTextbox" ng-model="data.items[0].country" ng-change="launchSearch();" name="country" id="bugzoo" maxlength=50><br>-->
+          <br><select ng-model="data.selectedName" ng-change="data.selectedNumber='x';launchSearch();" ng-options="x for x in data.names"><br>
+      </select>
+      <br><input class="resizedTextbox" ng-model="data.items[0].year" ng-change="launchSearch();" name="year" maxlength=4><br>
+    </form>
+  </div>
+  <div class="frameB1L">
+    Adm Pct<br>
+    Instate offCampus<br>
+    SAT Math 75 %ile<br>
+  </div>
+  <div class="frameB1">
+    <form>
+      <input class="resizedTextbox" ng-model="data.items[0].admitpct" ng-change="launchSearch();" name="year" maxlength=4><br>
+      <input class="resizedTextbox" ng-model="data.items[0].instatecost” ng-change="launchSearch();" name=“xx”><br>
+      <input class="resizedTextbox" ng-model="data.items[0].satmath75” ng-change="launchSearch();" name=“satmath75”><br>
+    </form>
+  </div>
+  <div class="frameB2L">
+    Yield Pct<br>
+    Outstate offcampus<br>
+    Read/Write 75 %ile<br> 
+  </div>
+  <div class="frameB2">
+    <form>
+      <input class="resizedTextbox" ng-model="data.items[0].admityield” ng-change="launchSearch();" name=“admityield” maxlength=30><br>
+      <input class="resizedTextbox" ng-model="data.items[0].outstatecost” ng-change="launchSearch();" name=“outstatecost” maxlength=30><br>
+      <input class="resizedTextbox" ng-model="data.items[0].rw75” ng-change="launchSearch();" name=“rw75”><br>
+    </form>
+  </div>
+  <div class="frameSB1L">
+    Category<br>    
+  </div>
+  <div class="frameSB1">
+    <form>
+      <input class="resizedTextbox4" ng-model="data.items[0].cat” ng-change="launchSearch();" name=“cat” maxlength=30><br>
+    </form>
+  </div>
+  <div class="frameSB2L">
+  </div>
+  <div class="frameSB2">   
+  </div>
+  <div class="frameF">
+      <img src="{{data.selectedNumber}}-2.jpg" style="width: 300%; height: 300%"/>
+  </div>
+  <div class="frameFR">
+
+  </div>
+</div>
+
+</body>
+</html>
+
+</div>]]></template>
+    </sp_widget>
+</record_update>
